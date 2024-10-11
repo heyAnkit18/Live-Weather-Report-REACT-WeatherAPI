@@ -1,43 +1,100 @@
-/* Weather Component Styles */
-
 .weather {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:#e2d4ff;;
+  place-self: center;
+  padding: 40px;
+  border-radius: 20px;
+  background-image: linear-gradient(45deg, #2f4680, #500ae4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds a shadow to elevate the card */
+  max-width: 400px; /* Controls the width of the weather card */
+  width: 100%; /* Ensures it is fully responsive */
+  margin: 0 auto; /* Centers the card */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%; /* Ensures the search bar spans the width of the card */
+  margin-bottom: 20px; /* Adds space below the search bar */
+}
+
+.search-bar input {
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding-left: 25px;
+  color: #626262;
+  background: #ebfffc;
+  font-size: 18px;
+  flex-grow: 1; /* Allows the input to expand and fill the available space */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.search-bar input:focus {
+  background-color: #d5f5f2; /* Change background on focus for better UX */
+}
+
+.search-bar img {
+  width: 50px;
+  padding: 12px;
+  border-radius: 50%;
+  background: #ebfffc;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Adds smooth animation */
+}
+
+.search-bar img:hover {
+  transform: scale(1.1); /* Grows slightly when hovered */
+  background-color: #d5f5f2; /* Slight background color change on hover */
+}
+
+.weather-icon {
+  width: 150px;
+  margin: 20px 0;
+  transition: transform 0.3s ease; /* Adds animation when hovered */
+}
+
+.weather-icon:hover {
+  transform: rotate(10deg) scale(1.05); /* Adds slight rotation and scale on hover */
+}
+
+.temperature {
+  color: #fff;
+  font-size: 80px;
+  line-height: 1;
+  margin: 10px 0; /* Adds space between temperature and location */
+}
+
+.location {
+  color: #fff;
+  font-size: 40px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds text shadow for better readability */
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .temperature {
+    font-size: 60px;
   }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 30px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .location {
+    font-size: 30px;
   }
-  
+
   .search-bar input {
-    border: none;
-    outline: none;
     font-size: 16px;
-    padding: 10px;
-    border-radius: 20px;
-    width: 250px;
+    padding-left: 20px;
   }
-  
+
   .search-bar img {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    cursor: pointer;
+    width: 40px;
+    padding: 10px;
   }
-  
-  .search-bar input::placeholder {
-    color: #888;
+
+  .weather-icon {
+    width: 120px;
   }
-  
-  .search-bar input:focus {
-    box-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
-  }
-  
+}
